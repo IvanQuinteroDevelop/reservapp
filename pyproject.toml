@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reservapp"
+version = "0.1.0"
+description = "Modular sports complex and synthetic court booking platform built in Python."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.optional-dependencies]
+# Optional dependencies prepared for future phases (testing, linting, REST API)
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.4",
+]
+api = [
+    "fastapi>=0.111",
+    "uvicorn>=0.30",
+]
+
+[project.scripts]
+reservapp = "reservapp.cli.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
